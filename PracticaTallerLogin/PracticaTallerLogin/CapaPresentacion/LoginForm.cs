@@ -24,9 +24,7 @@ namespace PracticaTallerLogin.CapaPresentacion.Forms
             try
             {
                 string hash = CapaUtilidades.Seguridad.CalcularSHA256(txtContrasena.Text);
-                MessageBox.Show("Hash calculado: " + hash);
-
-                var usuario = negocio.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
+                var usuario = negocio.IniciarSesion(txtCorreo.Text, hash);
 
                 if (usuario != null)
                 {

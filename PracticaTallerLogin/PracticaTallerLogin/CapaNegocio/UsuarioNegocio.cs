@@ -22,8 +22,7 @@ namespace CapaNegocio
 
         public Usuario? IniciarSesion(string correo, string contrasena)
         {
-            string hash = Seguridad.CalcularSHA256(contrasena);
-            return dao.Login(correo, hash);
+            return dao.Login(correo, contrasena);
         }
 
         public List<Usuario> ObtenerUsuarios()
