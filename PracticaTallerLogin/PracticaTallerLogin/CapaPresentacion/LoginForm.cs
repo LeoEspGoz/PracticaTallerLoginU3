@@ -23,8 +23,7 @@ namespace PracticaTallerLogin.CapaPresentacion.Forms
         {
             try
             {
-                string hash = CapaUtilidades.Seguridad.CalcularSHA256(txtContrasena.Text);
-                var usuario = negocio.IniciarSesion(txtCorreo.Text, hash);
+                var usuario = negocio.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
 
                 if (usuario != null)
                 {
